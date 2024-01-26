@@ -10,19 +10,26 @@ function shuffle(array) {
     return array;
 }
 
-var tempStimOrder = []; 
 
+//var tempStimOrder = []; 
+
+// select 5 recordings just to create a mini version of the survey for testing purposes
+var tempStimOrder = stim[0][0].slice(0,5); 
+
+/*
 for (var speaker = 0; speaker < stim.length; speaker++) {
     for (var num_emot = 0; num_emot < stim[speaker].length; num_emot++) {
         // first, shuffle the whole array and then ... 
         var shuffled_array = shuffle(stim[speaker][num_emot])
-        // from all files in the speaker-emo sublist, randomly select 2 
-        tempStimOrder.push(shuffled_array.slice(0,2)); 
+        // from all files in the speaker-emo sublist, randomly select 1 
+        tempStimOrder.push(shuffled_array.slice(0,1)); 
         
     }
 }
+*/
 
 var stimOrder = shuffle(tempStimOrder.flat()) 
-//console.log('full stim set length ', stimOrder.length, //stimOrder); 
+//console.log('full stim set length ', stimOrder.length, stimOrder); 
+
 
 export default stimOrder; 

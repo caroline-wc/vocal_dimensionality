@@ -69,6 +69,7 @@ function Experiment() {
                     <Debrief 
                         nextPage={nextPage} 
                         writeData={writeData}
+                        subID={subID}
                     />
                 );
                 

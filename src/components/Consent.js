@@ -1,9 +1,24 @@
-import React from "react";
+import React, {useState, useRef} from "react";
 import { Container, Typography } from "@mui/material";
 import { Logos, StyledButton, Title } from "../StyledElements";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Consent = ({ nextPage }) => {
-    return (
+    
+    const recaptchaRef = React.createRef();
+
+    const onSubmit = () => {
+        const recaptchaValue = recaptchaRef.current.getValue();
+        
+        if (!recaptchaValue) {
+            alert("Please verify the reCAPTCHA!");
+        } else {
+            nextPage();
+        }
+    }
+    
+    
+        return (
         <Container component="main" maxWidth="md" align="center">
             <Logos />
             <Title text="CONSENT TO TAKE PART IN RESEARCH" />
@@ -134,7 +149,10 @@ const Consent = ({ nextPage }) => {
                 <li>You know you are free to withdraw at any time.</li>
             </Typography>
 
-            <StyledButton handleClick={nextPage} text="I Agree" />
+            <StyledButton handleClick={onSubmit} text="I Agree" />
+            <ReCAPTCHA 
+            ref={recaptchaRef} sitekey="6LfRH1kpAAAAAMN9OjE5yi8gJQHBwgBBjIRhBq1c" align="center"
+            />
         </Container>
     );
 };

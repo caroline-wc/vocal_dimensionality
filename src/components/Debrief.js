@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Container, Typography } from "@mui/material";
 import { StyledBox, Title } from "../StyledElements";
 
-function Debrief({writeData}) {
+function Debrief({writeData, subID}) {
     
     useEffect (() => {
         writeData();
@@ -23,7 +23,7 @@ function Debrief({writeData}) {
                 <br />
                 <br />
                 <strong> COMPLETION CODE </strong>
-                <StyledBox> X63L-TLXE-9CKS-QZ88</StyledBox>
+                <StyledBox> {subID} </StyledBox>
             </Typography>
 
             <Typography component="h2" variant="h6" align="left">
