@@ -1,21 +1,8 @@
 import React, {useState, useRef} from "react";
 import { Container, Typography } from "@mui/material";
 import { Logos, StyledButton, Title } from "../StyledElements";
-import ReCAPTCHA from "react-google-recaptcha";
 
 const Consent = ({ nextPage }) => {
-    
-    const recaptchaRef = React.createRef();
-
-    const onSubmit = () => {
-        const recaptchaValue = recaptchaRef.current.getValue();
-        
-        if (!recaptchaValue) {
-            alert("Please verify the reCAPTCHA!");
-        } else {
-            nextPage();
-        }
-    }
     
     
         return (
@@ -149,10 +136,7 @@ const Consent = ({ nextPage }) => {
                 <li>You know you are free to withdraw at any time.</li>
             </Typography>
 
-            <StyledButton handleClick={onSubmit} text="I Agree" />
-            <ReCAPTCHA 
-            ref={recaptchaRef} sitekey="6LfRH1kpAAAAAMN9OjE5yi8gJQHBwgBBjIRhBq1c" align="center"
-            />
+            <StyledButton handleClick={nextPage} text="I Agree" />
         </Container>
     );
 };

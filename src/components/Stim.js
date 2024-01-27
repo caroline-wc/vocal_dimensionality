@@ -11,12 +11,8 @@ function shuffle(array) {
 }
 
 
-//var tempStimOrder = []; 
+var tempStimOrder = []; 
 
-// select 5 recordings just to create a mini version of the survey for testing purposes
-var tempStimOrder = stim[0][0].slice(0,5); 
-
-/*
 for (var speaker = 0; speaker < stim.length; speaker++) {
     for (var num_emot = 0; num_emot < stim[speaker].length; num_emot++) {
         // first, shuffle the whole array and then ... 
@@ -26,10 +22,8 @@ for (var speaker = 0; speaker < stim.length; speaker++) {
         
     }
 }
-*/
 
-var stimOrder = shuffle(tempStimOrder.flat()) 
-//console.log('full stim set length ', stimOrder.length, stimOrder); 
+var stimOrder = shuffle(tempStimOrder.flat()); 
 
 
 export default stimOrder; 

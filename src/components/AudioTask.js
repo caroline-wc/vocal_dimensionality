@@ -141,7 +141,7 @@ function GenerateImpression({ nextPage, stimOrder, responses, setResponses }) {
     return (
         <div>
             <ProgressBar
-                completed={trial}
+                completed={trial * 2}
                 bgColor="green"
                 animateOnRender={true}
                 isLabelVisible={false}
