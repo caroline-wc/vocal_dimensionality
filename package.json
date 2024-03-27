@@ -1,7 +1,7 @@
 {
-    "name": "vocal_impressions",
+    "name": "trait_ratings",
     "version": "0.1.0",
-    "homepage": "vocal_impressions",
+    "homepage": "trait_ratings",
     "private": true,
     "dependencies": {
         "@emotion/react": "^11.10.5",
