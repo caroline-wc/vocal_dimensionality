@@ -3,9 +3,11 @@ import Consent from "./Consent";
 import Instructions from "./Instructions"
 import AudioTest from "./AudioTest"
 import DemoSurvey from "./DemoSurvey";
-import GenerateImpression from "./AudioTask";
+//import GenerateImpression from "./AudioTask";
 import Debrief from "./Debrief";
 import stimOrder from "./Stim";
+import termOrder from "./Term";
+import Ratings from "./Ratings";
 import db from "./DataBase";
 import { v4 as uuidv4 } from "uuid";
 import { ref, set } from "firebase/database";
@@ -47,9 +49,10 @@ function Experiment() {
                 return <AudioTest nextPage={nextPage} />;
             case 4:
                 return (
-                    <GenerateImpression
+                    <Ratings
                         nextPage={nextPage}
                         stimOrder={stimOrder}
+                        termOrder={termOrder}
                         responses={responses}
                         setResponses={setResponses}
                     />

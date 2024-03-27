@@ -23,7 +23,7 @@ for (var speaker = 0; speaker < stim.length; speaker++) {
     }
 }
 
-var stimOrder = shuffle(tempStimOrder.flat()); 
+var stimOrder = shuffle(tempStimOrder.flat()).slice(0,30); 
 
 
 export default stimOrder; 
