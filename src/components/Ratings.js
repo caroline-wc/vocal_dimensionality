@@ -3,6 +3,18 @@ import { Container, Typography, LinearProgress } from "@mui/material";
 import { StyledButton, StyledSlider } from "../StyledElements";
 import ReactPlayer from "react-player";
 
+/*
+<Typography variant="h4" padding="00%" marginTop="20px" align="right" justifyContent='space-between'>
+                    <strong> extremely {currTerm}</strong> 
+                </Typography>
+
+<Typography variant="h4" padding="00%" marginTop="20px" align="left" justifyContent='space-between'>
+                    <strong> not at all {currTerm}</strong> 
+                </Typography>
+*/
+
+
+
 function Ratings({ termOrder, stimOrder, nextPage, responses, setResponses }) {
     const [trialNum, setTrialNum] = useState(0);
     const [currTerm, setCurrTerm] = useState(termOrder[0]);
@@ -93,7 +105,7 @@ function Ratings({ termOrder, stimOrder, nextPage, responses, setResponses }) {
             />
             <Container component="main" maxWidth="md" align="center">
                 <Typography variant="h4" padding="3%" marginTop="20px">
-                    Please listen to the audio recording and answer the following question:
+                    Please listen to the audio recording and use the slider to rate:
                     How <strong> {currTerm} </strong> is the speaker?
                 </Typography>
 
@@ -102,7 +114,7 @@ function Ratings({ termOrder, stimOrder, nextPage, responses, setResponses }) {
                     url={`./filtered_audio/${stim}`}
 
                     // the below url is for development
-                    //url={`vocal_impressions/filtered_audio/${stim}`}
+                    //url={`trait_ratings/filtered_audio/${stim}`}
 
                     onEnded={(e) => setAudioPlayed(true)}
                     controls={true}
@@ -120,8 +132,25 @@ function Ratings({ termOrder, stimOrder, nextPage, responses, setResponses }) {
                 <br />  <br />
                 <br />  <br />
 
-                <Typography variant="h4" padding="00%" marginTop="20px" align="left" justifyContent='space-between'>
-                    <strong> not at all {currTerm}</strong> 
+
+                <Typography
+                    style={{
+                        color: "rgb(33,37,40)",
+                        textAlign: "left",
+                        fontSize: "30px",
+                        paddingTop: "1%",
+                    }}
+                    component="h4"
+                    variant="h5"
+                >
+                    <strong>
+                        <span style={{ float: "left" }}>
+                            not at all {currTerm}
+                        </span>
+                        <span style={{ float: "right" }}>
+                            extremely {currTerm}
+                        </span>
+                    </strong>
                 </Typography>
 
                 <StyledSlider
@@ -133,9 +162,8 @@ function Ratings({ termOrder, stimOrder, nextPage, responses, setResponses }) {
                     style={{ marginTop: "20px" }}
                 />
 
-                <Typography variant="h4" padding="00%" marginTop="20px" align="right" justifyContent='space-between'>
-                    <strong> extremely {currTerm}</strong> 
-                </Typography>
+
+            
 
                 <StyledButton handleClick={nextTrial} text="NEXT" />
             </Container>

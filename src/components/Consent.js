@@ -61,7 +61,7 @@ const Consent = ({ nextPage }) => {
                 <br />
                 <strong>What does this study involve?</strong>
                 <br />
-                Your participation in this study will last approximately 30 minutes. You
+                Your participation in this study will last approximately 25 minutes. You
                 will begin by reading the study instructions. You will then make
                 judgments about traits, mental states, actions, and/or
                 situations, or nonsocial objects or entities (such as computer
@@ -102,7 +102,7 @@ const Consent = ({ nextPage }) => {
                 <br />
                 <strong>Will you be paid to take part in this study?</strong>
                 <br />
-                Yes. You will be paid $3.75.
+                Yes. You will be paid $3.13.
                 This payment will be made electronically via the online platform
                 you are using to complete the study.
                 <br />
